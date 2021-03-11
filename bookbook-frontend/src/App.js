@@ -1,25 +1,51 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import axios from 'axios';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      books:[],
+      username: "",
+      password: ""
+    };
+  }
+
+  componentDidMount = () => {
+    this.getBooks();
+  }
+
+  getBooks = async () => {
+    const response = await axios.get("http://localhost:3001/book/all")
+    
+    this.setState({
+      books: response.data
+    })
+  }
+
+  render() {
+
+    const books = this.state.books.map(book => {
+      return (
+        <div>
+          <h3>{book.title}</h3>
+          <h2>{book.author}</h2>
+          <img src={book.img} alt="book-cover" />
+        </div>
+      )
+    })
+    return (
+      <div className="App">
+        <header className="App-header">
+          <h1>Welcome to Bookbook-App</h1>
+          <div>
+            {books}
+          </div>
+        </header>
+      </div>
+    );
+  }
 }
 
 export default App;
