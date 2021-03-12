@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css';
 import { Route, Link } from 'react-router-dom';
 import Profile from './components/Profile';
+import BooksPage from './components/BooksPage';
 
 class App extends Component {
   constructor(props) {
@@ -40,7 +41,7 @@ class App extends Component {
 
     const potentialBooks = this.state.potentialBooks;
     const newPotentialBooks = potentialBooks.filter(book => {
-      return newBook.id
+      return newBook.id !== book.id
     })
     console.log(newPotentialBooks);
 
@@ -51,6 +52,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.user.currentBooks);
     const books = this.state.books.map(book => {
       return (
         <div>
@@ -66,17 +68,25 @@ class App extends Component {
         <h1>Welcome to Bookbook-App</h1>
           <nav>
             <Link to="/profile">Profile</Link>
+            <Link to="/books">See available Books</Link>
           </nav>
           </header> 
 
           <Route path="/profile" render={() => (
             <Profile 
             user={this.state.user} 
-            books={books}
             />
           )} />
+         
+          <Route path="/books" render={() => (
+            <BooksPage 
+            books={this.state.books}
+            addBook={this.addBook}
+            />
+          )} />
+
           <div>
-            {books}
+           
           </div>
       
       </div>
