@@ -4,8 +4,8 @@ const BooksPage = (props) => {
     console.log(props);
     return (
    <div>
-       {props.books.map(book => (
-           <div>
+       {props.potentialBooks.map(book => (
+           <div key={book.id}>
                <img src={book.img} alt="book cover" />
                <h3>{book.title}</h3>
                <p>{book.author}</p>

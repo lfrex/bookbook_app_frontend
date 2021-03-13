@@ -31,7 +31,7 @@ class App extends Component {
 
     this.setState({
       books: response.data,
-      potentialBooks: availableBooks
+      potentialBooks: response.data
     })
   }
 
@@ -41,7 +41,7 @@ class App extends Component {
 
     const potentialBooks = this.state.potentialBooks;
     const newPotentialBooks = potentialBooks.filter(book => {
-      return newBook.id !== book.id
+      return newBook.title !== book.title
     })
     console.log(newPotentialBooks);
 
@@ -80,7 +80,7 @@ class App extends Component {
          
           <Route path="/books" render={() => (
             <BooksPage 
-            books={this.state.books}
+            potentialBooks={this.state.potentialBooks}
             addBook={this.addBook}
             />
           )} />
