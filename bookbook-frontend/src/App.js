@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, withRouter } from 'react-router-dom';
+
 import Profile from './components/Profile';
 import BooksPage from './components/BooksPage';
+import BookDetail from './components/BookDetail';
+
 
 class App extends Component {
   constructor(props) {
@@ -16,7 +19,8 @@ class App extends Component {
         pic: "https://i.pinimg.com/564x/68/ee/c7/68eec72db45045c5e5d3eee08e992531.jpg",
         bookList: []
       },
-      potentialBooks: []
+      potentialBooks: [],
+      selectBook: {}
     };
   }
 
@@ -51,8 +55,16 @@ class App extends Component {
     })
   }
 
+  selectBookById = async(e, bookId) => {
+    e.preventDefault();
+    const book=await axios.get(`http://localhost:3001/book/`+bookId)
+    this.setState({
+      selectBook: book.data.book[0]
+    })
+  }
+
   render() {
-    console.log(this.state.user.currentBooks);
+   
     const books = this.state.books.map(book => {
       return (
         <div>
@@ -84,6 +96,16 @@ class App extends Component {
             addBook={this.addBook}
             />
           )} />
+
+          <Route path="/book/:id" render={(routerProps) => (
+            <BookDetail 
+         
+            potentialBooks={this.state.potentialBooks}
+       
+            {...routerProps}
+            />
+          )} />
+
 
           <div>
            

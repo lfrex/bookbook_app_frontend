@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route, Link } from 'react-router-dom';
 
 const Profile = (props) => {
     console.log(props.user.bookList);
@@ -10,7 +11,9 @@ const Profile = (props) => {
             <br></br><br></br>
             <h2>Pending books: </h2>    
             <br></br>
-            {props.user.bookList.map(book => <img src={book.img} alt="book cover" />)}
+            <Link to="/BookDetail" >
+                {props.user.bookList.map(book => <img src={book.img} alt="book cover" />)}
+            </Link>
         </div>
     )
 }
