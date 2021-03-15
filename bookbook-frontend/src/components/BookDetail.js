@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom';
+import { Accordion, Card } from "react-bootstrap";
 
 
 const BookDetail = props => {
@@ -19,7 +20,19 @@ const BookDetail = props => {
                 
                 <img src={foundBook.img} alt="book cover" />   
 
-                Comments: {foundBook.comments} 
+                <div>
+                    <Accordion>
+                        <Card>
+                            <Accordion.Toggle as={Card.Header} eventKey="0">
+                                See comments about the book:
+                            </Accordion.Toggle>
+
+                            <Accordion.Collapse eventKey="0">
+                                <Card.Body>{foundBook.comments}</Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                    </Accordion>
+                </div>
 
                 <Link to="/profile"> Return to Profile</Link>
                 <Link to="/books">Return to Available Books</Link>

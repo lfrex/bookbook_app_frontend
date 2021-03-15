@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 import { Route, Link, withRouter } from 'react-router-dom';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import Profile from './components/Profile';
 import Login from './components/Login';
