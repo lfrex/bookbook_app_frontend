@@ -4,6 +4,7 @@ import './App.css';
 import { Route, Link, withRouter } from 'react-router-dom';
 
 import Profile from './components/Profile';
+import Login from './components/Login';
 import BooksPage from './components/BooksPage';
 import BookDetail from './components/BookDetail';
 
@@ -20,12 +21,16 @@ class App extends Component {
         bookList: []
       },
       potentialBooks: [],
-      selectBook: {}
+      selectBook: {},
+      username: "",
+      password: "",
+      users: []
     };
   }
 
   componentDidMount = () => {
     this.getBooks();
+    this.getUsers();
   }
 
   getBooks = async () => {
@@ -36,6 +41,16 @@ class App extends Component {
     this.setState({
       books: response.data,
       potentialBooks: response.data
+    })
+  }
+
+  getUsers = async () => {
+    const response = await axios.get("http://localhost:3001/user/all")
+    
+    const availableUsers = [response.data]
+
+    this.setState({
+      users: response.data
     })
   }
 
@@ -63,6 +78,28 @@ class App extends Component {
     })
   }
 
+  loginOnChange = (e) => {
+    e.preventDefault();
+
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  }
+
+  login = async (e) =>{
+    e.preventDefault();
+    const data = {
+      username: this.state.username,
+      password: this.state.password,
+    };
+    console.log(data);
+
+    const response = await axios.post("http://localhost:3001/user/login", data);
+    
+    console.log(response);
+
+  }
+
   render() {
    
     const books = this.state.books.map(book => {
@@ -86,10 +123,21 @@ class App extends Component {
 
           <Route path="/profile" render={() => (
             <Profile 
-            user={this.state.user} 
+            user={this.state.user}
+            login={this.login} 
             />
           )} />
          
+         <Route path="/login" render={() => (
+            <Login
+            users={this.state.users}
+            username={this.state.username}
+            password={this.state.password}
+            loginOnChange={this.loginOnChange}
+            login={this.login} 
+            />
+          )} />
+
           <Route path="/books" render={() => (
             <BooksPage 
             potentialBooks={this.state.potentialBooks}
