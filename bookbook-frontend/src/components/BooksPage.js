@@ -7,12 +7,14 @@ const BooksPage = props => {
    <div>
        {props.potentialBooks.map(book => (
            <div key={book.id}>
+               <br></br><br></br>
                <Link to={`book/${book.id}`}>
                     <img src={book.img} alt="book cover" />
                </Link>
                <h3>{book.title}</h3>
                <p>{book.author}</p>
                <button onClick={() => props.addBook(book)}>Add Book</button>
+               <br></br><br></br>
             </div>
        ))}
         <Link to="/profile">

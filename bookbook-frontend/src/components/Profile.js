@@ -11,9 +11,19 @@ const Profile = (props) => {
             <br></br><br></br>
             <h2>Pending books: </h2>    
             <br></br>
-            <Link to="/BookDetail" >
-                {props.user.bookList.map(book => <img src={book.img} alt="book cover" />)}
-            </Link>
+            
+            <div>
+
+                {props.user.bookList.map(book => (
+                <div key={book.id}>
+                  
+                    <img src={book.img} alt="book cover" />
+                    <br></br>
+                    <p>Title: {book.title}</p>
+                </div>
+                ))}
+
+            </div>
         </div>
     )
 }

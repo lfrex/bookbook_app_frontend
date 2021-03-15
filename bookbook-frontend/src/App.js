@@ -98,10 +98,8 @@ class App extends Component {
           )} />
 
           <Route path="/book/:id" render={(routerProps) => (
-            <BookDetail 
-         
-            potentialBooks={this.state.potentialBooks}
-       
+            <BookDetail         
+            potentialBooks={this.state.potentialBooks}      
             {...routerProps}
             />
           )} />
