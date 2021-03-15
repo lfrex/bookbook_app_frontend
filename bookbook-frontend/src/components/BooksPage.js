@@ -1,25 +1,36 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom';
-import { Accordion } from "react-bootstrap";
+
 
 const BooksPage = props => {
     console.log(props.potentialBooks);
     return (
    <div>
+       <h1 className="books-h1" >Current books available</h1>
        {props.potentialBooks.map(book => (
-           <div key={book.id}>
+       
+          
+           <div className="grid-list" key={book.id}>
                <br></br><br></br>
-               <Link to={`book/${book.id}`}>
-                    <img src={book.img} alt="book cover" />
-               </Link>
-               <h3>{book.title}</h3>
-               <p>{book.author}</p>
+               <div className="image-txt-wrapper">
+                <Link to={`book/${book.id}`}>
+                        <img className="display-books-img" src={book.img} alt="book cover" />
+                </Link>
+                <br></br><br></br>
+                <h6 className="display-books-txt" >{book.title}</h6>
+               </div>
+              
                <button onClick={() => props.addBook(book)}>Add Book</button>
-               <br></br><br></br>
+               <br></br><br></br><br></br>
             </div>
+          
+        
        ))}
         <Link to="/profile">
+            <br></br>
             <button type="button"> Return to Profile </button>
+
+            <br></br><br></br>
         </Link>
    </div>
        )

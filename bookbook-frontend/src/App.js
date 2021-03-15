@@ -3,6 +3,10 @@ import axios from 'axios';
 import './App.css';
 import { Route, Link, withRouter } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
+import {LinkContainer} from 'react-router-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
+
+
 
 import Profile from './components/Profile';
 import Login from './components/Login';
@@ -117,8 +121,13 @@ class App extends Component {
         <header className="App-header">
         <h1>Welcome to Bookbook-App</h1>
           <nav>
-            <Link to="/profile">Profile</Link>
-            <Link to="/books">See available Books</Link>
+            
+            <LinkContainer to="/profile">
+              <Nav.Link>Profile</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/books">
+              <Nav.Link>See available books</Nav.Link>
+            </LinkContainer>
           </nav>
           </header> 
 
@@ -152,11 +161,16 @@ class App extends Component {
             {...routerProps}
             />
           )} />
-
-
+        <footer>
           <div>
-           
+            <blockquote cite="https://en.wikipedia.org/wiki/Groucho_Marx">
+            "I find television very educating. Every time somebody turns on the set, 
+            I go into the other room and read a book."
+            </blockquote>
+            <p>- Groucho Marx</p>
           </div>
+        </footer>
+
       
       </div>
     );

@@ -13,13 +13,14 @@ const BookDetail = props => {
    <div>      
            <div>
 
-                <h3>{foundBook.title}</h3>
-                <h2>{foundBook.author}</h2>
+                <h2>{foundBook.title},</h2>
+                <h3>By {foundBook.author}.</h3>              
+                <img className="book-img" src={foundBook.img} alt="book cover" />   
+                <br></br><br></br>
                 ISBN: {foundBook.isbn}
+                <br></br>
                 Genre: {foundBook.genre} 
-                
-                <img src={foundBook.img} alt="book cover" />   
-
+                <br></br>
                 <div>
                     <Accordion>
                         <Card>
@@ -32,6 +33,7 @@ const BookDetail = props => {
                             </Accordion.Collapse>
                         </Card>
                     </Accordion>
+                    <br></br><br></br>
                 </div>
 
                 <Link to="/profile"> Return to Profile</Link>
