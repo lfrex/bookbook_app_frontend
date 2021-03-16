@@ -1,6 +1,7 @@
+
 import React from 'react';
 import { Route, Link } from 'react-router-dom';
-
+import Button from 'react-bootstrap/Button';
 
 const BooksPage = props => {
     console.log(props.potentialBooks);
@@ -29,7 +30,7 @@ const BooksPage = props => {
        ))}
         <Link to="/profile">
             <br></br>
-            <button type="button"> Return to Profile </button>
+            <Button variant="primary" size="lg"> Return to Profile </Button>{' '}
 
             <br></br><br></br>
         </Link>
