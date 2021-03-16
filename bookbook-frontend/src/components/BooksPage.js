@@ -6,6 +6,7 @@ const BooksPage = props => {
     console.log(props.potentialBooks);
     return (
    <div>
+       <br></br><br></br>
        <h1 className="books-h1" >Current books available</h1>
        {props.potentialBooks.map(book => (
        
