@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
-import { Route, Link, withRouter } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
 import {LinkContainer} from 'react-router-bootstrap';
-import { Navbar, Nav } from 'react-bootstrap';
-import Button from 'react-bootstrap/Button';
+import { Nav } from 'react-bootstrap';
+
+
 
 
 
@@ -21,9 +22,9 @@ class App extends Component {
     this.state = {
       books:[],
       user: {
-        name: "Octavio Villalpando",
-        username: "Mostro",
-        pic: "https://i.pinimg.com/564x/68/ee/c7/68eec72db45045c5e5d3eee08e992531.jpg",
+        name: "Guest",
+        username: "",
+        pic: "https://i.imgur.com/4xcXDw6.jpg",
         bookList: []
       },
       potentialBooks: [],
@@ -119,18 +120,31 @@ class App extends Component {
     })
     return (
       <div className="App">
+      
         <header className="App-header">
-        <h1>Welcome to Bookbook-App</h1>
-          <nav>
-            
-            <LinkContainer to="/profile">
-              <Nav.Link>Profile</Nav.Link>
-            </LinkContainer>
-            <LinkContainer to="/books">
-              <Nav.Link>See available books</Nav.Link>
-            </LinkContainer>
-          </nav>
-          </header> 
+
+          <div className="header-img-txt">
+            <img className="header-img" src="https://i.imgur.com/LdDzXus.png" alt="A stack of books" />
+        
+          <div classNameÇ="header-title">
+            <br></br>
+            <h1>Welcome to Bookbook-App</h1>      
+            <p>The place to know everything about books!</p>
+          </div>
+          </div>
+
+          <aside>
+            <nav>    
+              <LinkContainer to="/profile">
+                <Nav.Link>Profile</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/books">
+                <Nav.Link>See available books</Nav.Link>
+              </LinkContainer>          
+            </nav>
+          </aside>
+        </header> 
+      
 
           <Route path="/profile" render={() => (
             <Profile 
