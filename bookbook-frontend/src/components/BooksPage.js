@@ -31,7 +31,6 @@ const BooksPage = props => {
         <Link to="/profile">
             <br></br>
             <Button variant="primary" size="lg"> Return to Profile </Button>{' '}
-
             <br></br><br></br>
         </Link>
    </div>

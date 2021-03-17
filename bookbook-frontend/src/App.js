@@ -79,7 +79,7 @@ class App extends Component {
 
   selectBookById = async(e, bookId) => {
     e.preventDefault();
-    const book=await axios.get(`http://localhost:3001/book/`+bookId)
+    const book=await axios.get(`https://bookbackend-app.herokuapp.com/book/`+bookId)
     this.setState({
       selectBook: book.data.book[0]
     })
@@ -107,7 +107,7 @@ class App extends Component {
 
   }
 
-  render() {
+  render() {  
     return (
       <div className="App">
       
