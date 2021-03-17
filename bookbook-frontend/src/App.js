@@ -41,7 +41,7 @@ class App extends Component {
   }
 
   getBooks = async () => {
-    const response = await axios.get("http://localhost:3001/book/all")
+    const response = await axios.get("https://bookbackend-app.herokuapp.com/book/all")
     
     const availableBooks = [response.data]
 
@@ -52,7 +52,7 @@ class App extends Component {
   }
 
   getUsers = async () => {
-    const response = await axios.get("http://localhost:3001/user/all")
+    const response = await axios.get("https://bookbackend-app.herokuapp.com/user/all")
     
     const availableUsers = [response.data]
 
