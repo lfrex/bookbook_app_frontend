@@ -108,16 +108,6 @@ class App extends Component {
   }
 
   render() {
-   
-    const books = this.state.books.map(book => {
-      return (
-        <div>
-          <h3>{book.title}</h3>
-          <h4>{book.author}</h4>
-          <img src={book.img} alt="book-cover" />
-        </div>
-      )
-    })
     return (
       <div className="App">
       
