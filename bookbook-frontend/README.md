@@ -26,7 +26,7 @@ An app to create Book collections, mainly used to control pending to read books,
 
 - Create a Backend server with related tables to control books and users usiing Node, Postgress and Sequelize.
 - Create a Gront-end using previously created backend as API using React and a technology never used before.
-- Add a technology never used before to the project (Bootsrap, in this case)
+- Add a technology never used before to the project (Bootstrap, in this case)
 - Deploy backend server on line using Heroku.
 - Deploy Frontend App on line through Surge.
 
