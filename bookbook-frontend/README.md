@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+# Bookbook-App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+An app to create Book collections, mainly used to control pending to read books, and in the future, a point of reunion for people wanting to exchange-sell books and share comments about them.
 
-In the project directory, you can run:
+## Sample
 
-### `npm start`
+<img src="https://i.imgur.com/YFtTycg.jpg" alt="Bookbook-app" width="300"/>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Table of Contents
 
-### `npm test`
+- [Description](#description)
+- [Sample](#sample)
+- [Project Objective](#project-objective)
+- [MVP / Stretch Goals](#mvp-stretch-goals)
+- [Current Features / User Stories](#current-features)
+- [Technologies used](#technologies-used)
+- [Project takeaways](#project-takeaways)
+- [Links](#links)
+- [Wireframes](#wireframes)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Project objective
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Create a Backend server with related tables to control books and users usiing Node, Postgress and Sequelize.
+- Create a Gront-end using previously created backend as API using React and a technology never used before.
+- Add a technology never used before to the project (Bootsrap, in this case)
+- Deploy backend server on line using Heroku.
+- Deploy Frontend App on line through Surge.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## MVP / Stretch Goals
 
-### `npm run eject`
+### Basic MVP
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [X] User can review a list of books keept in an external API.
+- [X] User can click in a book cover and see basic details about it.
+- [X] User can display hidden comments about the selected book.
+- [X] User can add the book to its collection.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Stretch goals
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- [ ] User can create its own and log into the app.
+- [ ] User can add comments about already existing books.
+- [ ] User can add its own books.
+- [ ] Add a “Like” button-Add user comments.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Technologies used
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* React
+* Node
+* Postgress
+* Sequelize
+* HTML
+* CSS
+* JavaScript
+* Surge
+* Heroku
+* Bootstrap (new technology used)
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Project takeaways
 
-### Analyzing the Bundle Size
+* Final deploy is never going to be easy at all. It is not a good idea do it when you almost have no time left.
+* Surge deploy presented unexpected problems, but this helped to learn more about how Cors works.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+## Links
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+* [Backend GitHub Repo:](https://github.com/lfrex/bookbook_app_backend)
+* [FrontEnd GitHub Repo:](https://github.com/lfrex/bookbook_app_frontend)    
+* [Surge deployment](http://bookbook-app.surge.sh/)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Wireframes
+<br>
+Initial wireframe for the project:
 
-### Deployment
+![Bookbook-App](https://i.imgur.com/i0k6aRa.jpg "Wireframe")
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Wireframes for stretch goals:
 
-### `npm run build` fails to minify
+![Bookbook-App](https://i.imgur.com/LzntJbX.jpg "Wireframe")
 
+ERD design
+
+![Bookbook-App](https://i.imgur.com/8j5Cwgf.jpg "Wireframe")
 
